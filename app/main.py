@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routers import auth
+from app.routers import auth, links
 
 app = FastAPI(
     title="URL Shortener with Analytics API",
@@ -9,6 +9,7 @@ app = FastAPI(
 )
 
 app.include_router(auth.router)
+app.include_router(links.router)
 
 
 @app.get("/")
